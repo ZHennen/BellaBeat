@@ -1,0 +1,117 @@
+Summary of Findings:
+
+Our Goal:
+
+Bellabeat has asked our data analytics team to find out how consumers are using their smart devices to interact with Bellabeat’s products.
+
+For this analysis, it is important to point out that it is asking the question of how users are using their smart devices to interact with the products and not necessarily how using the product is affecting them.
+For example, It will be better for this analysis to understand how many times a user interacts with their device rather than how many calories an individual burned off per day with activities.
+
+
+
+Gathering Data: 
+
+Our data was all gathered from https://www.kaggle.com/datasets/arashnic/fitbit
+
+This dataset includes 18 different files.
+
+
+Ask, Prepare, and Process.
+
+Theory:
+
+Diving into the project it was important for me to sit back and pick little objectives to help this big project become more manageable. 
+Even before I start to clean my data I needed to establish a direction for this project. 
+I wanted to figure out how frequently each individual was interacting with their Bellabeat products. 
+It is not possible for each user to use their products 24/7 so it would be important to establish peak times of use and low times of use.
+
+
+Data Cleaning:
+
+I decided to import all 18 files into Google Sheets and I immediately started removing all empty cells, duplicate cells, and null values. During these three steps and across all data groups I found 3 duplicate cells. 
+There were also some columns that used the datatype DateTime and I wanted to split them up into Date and Time formats. 
+
+My next goal was to find the total number of users and the frequency of use for each user. This task is made easy in Google Sheets or Excel by using a Pivot table with the COUNTA function.
+In total, I found 32 users when there were meant to be 30. 
+
+I also found that there were 7 accounts that did not have more than 19 different days of use listed.
+
+Because there were 2 extra accounts I made an assumption that some of these users created a second account because they lost the information of their first account.
+This is not a big problem because the average number of days that users interacted with their Bellabeat product was 29.25 days out of 31 total possible days. 
+Out of the 32 accounts, 11 of them did not use their devices every day and 22 of them did use their devices every single day. 
+This is a 2/3rds margin of success which means we can improve by 33% of total daily use. We can note this to use later when coming up with ways to improve Bellabeat’s customer interaction.
+
+
+Analyze:
+
+
+We started some of the analysis steps on the previous section while formatting so it makes sense to continue on that same heading. 
+We know how many of the 30 participants participated every day and what the average number of participation days there was. 
+
+Tracking the total number of hours an individual interacted with Bellabeat we get an average of 687 hours per person. 
+This just means that over the 744 total hours (31 days) of this study, the average user only missed 57 total hours of use. 
+Some of these hours could have been lost during the day and some of them could have been lost while sleeping. 
+This data was tracked in Google Sheets using a Pivot TableNow it will be important to divide up and see which users are actively tracking their daily activity while at work, or while at home, 
+and to track if they are using their Bellabeat while they sleep.
+
+Let’s start with the daily activity. 
+When we take into account the recordings of the Time and Date columns we start to see some interesting trends.
+Couple these two with the Average intensity of a workout, the average number of calories burned, 
+and the average total amount of steps and it begins to paint a full picture.
+From this gathered data it is plain to see that Sundays have the highest average amount of activity. 
+This means that users are interacting with their devices more commonly and for some more intensely on Sundays.
+Although Sunday is the most common day for interaction it appears that 6 pm is the most common time for interaction across all users with 7 pm as a close second.
+This could be attributed to after-work exercises like running, going for a walk with the family, or cleaning the house.
+If we do not include nighttime activity when individuals are likely sleeping the average intensity stays pretty consistent throughout the workday. We will note these findings to use later.
+Now it is important to check sleep trends for each individual. 
+
+Unfortunately, This is an area Bellabeat can improve on. Out of the 32 recorded Ids, only 23 users recorded any of their sleep data. Of these 23 individuals,
+3 of them recorded 2 hours of sleep and under as an average. This is obviously impossible and displays that they were not interacting with the product properly or that there was an error with their device.
+They will not be included in the averages.
+
+With the outliers being cleaned it appears that the average amount of sleep per recorded user was right at about 7 hours of sleep. The average time spent in bed was 7.8 hours per night.
+
+This is important to note for later as only around 2/3rds of users have correct sleep data if any at all.
+One last piece of data that is important to note is the number of users who interacted with the weight tracker function in the Bellabeat app.
+
+of 32 unique Ids for this study only 8 individuals even interacted with the weight tracker function. 
+That’s a measly 25% of users. Of these 8 users only 67 interactions were recorded. Two of these users accounted for 54 of those 67 interactions. 
+
+Bellabeat has an automatic weight-tracking function and a manual entry function. 
+Of these two functions, the Manual entry function has 41 uses and the Automatic function has 26 uses. Only 3 users interacted with the automatic function while the other 5 were all manual input. 
+
+This means of the 32 users only 15.625% of users interacted with the manual input function, and 9.375% interacted with the automatic input function. It is important to note these findings for later.
+
+
+
+Share and Act:
+
+
+Our findings have suggested the following:66% of users have interacted with Bellabeat every single day. Every user interacted more than every other day.
+
+The average user only missed 57 hours of interaction in total through the entire 31-day study. This means that although some users weren’t tracking their sleep they were still having their activity tracked at night.
+
+Sunday is the most popular day to interact with Bellabeat and 6 pm is the most popular time of day to interact.
+23 users recorded any sleep data at all with only 20 of them recording an average of more than 2 hours of sleep a night. This is 62.5% of users.
+
+The average amount of sleep per night was 7 hours and the average amount of time spent in bed was 7.8 hours per night.
+
+25% of users interacted with the weight-tracking functions. 
+
+
+
+Using all of the data collected I have a few suggestions that Bellabeat can use to improve their product interaction. 
+Bellabeat boasts a strong consistency in its interaction with its customers. Most come back every single day and all of the users came back at least once every other day. 
+Across the entire span of  31 days, their users only missed 57 hours of interaction which is pretty crazy when you consider that includes sleep time too.
+
+Two areas of consistency where Bellabeat is lacking are their sleep tracking function and their weight tracking function.
+
+For sleep tracking, I would encourage Bellabeat to look into their software to see if there are any disconnection issues during the night for some of these users. 
+The only reason I think it may be a software issue is that most individuals had most of their nights recorded on the activity tracker but not on the sleep tracker.
+
+Weight is a sensitive issue for most people as is evident by only 25% of individuals even interacting with the weight tracking function. 
+I think the best approach to gain more traction with users to increase interaction is to make achieving your weight goals fun. 
+If Bellabeat overhauled the weight tracking section of their app to include points gained for progress, medals, or achievements it could help counteract the negative that comes with tracking your weight. 
+For the more analytic types it could be smart to include metrics like charts or percentages of goals met to show you how close you are to achieving your goals. 
+If they can improve interaction in these two areas I think they can increase their overall interaction and increase the excitement around using Bellabeat’s products.
+
