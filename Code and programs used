@@ -1,0 +1,45 @@
+To start this study I downloaded all 18 files and combined relevant files into one. I used R to start my initial gathering and cleaning. I also used R to get some processing and organization done
+but ultimately found it easier to work in Google Sheets for this project.
+
+
+
+activity_data <- dplyr::rename(activity_data, Id = id, TotalSteps = average_daily_steps, TotalDistance = average_daily_distance,
+
+ VeryActiveMinutes = average_very_active_minutes, FailyActiveMinutes = average_fairly_active_minutes,
+
+ LightlyActiveMinutes = average_lightly_active_minutes, SedentaryMinutes = sedentary_minutes, Calories = calories)
+
+aggregated_sleep_day <- aggregate.data.frame(sleepDay_merged, list(sleepDay_merged$Id), FUN = mean)
+
+sleep_data <- select(aggregated_sleep_day, 'Id', 'TotalMinutesAsleep', 'TotalTimeInBed')
+
+sleep_data <- dplyr::rename(sleep_data, id = Id, average_minutes_asleep = TotalMinutesAsleep, average_minutes_in_bed = TotalTimeInBed)
+
+sleep_data <- sleep_data %>%
+
+  mutate(average_hours_asleep = average_minutes_asleep/60) %>%
+
+  mutate(average_hours_in_bed = average_minutes_in_bed/60) 
+
+
+
+From here I analyzed each piece of data using Google Sheets. 
+I used the search function along with the conditional formatting functions to locate any null values along with any empty cells. 
+Through all of the files I only found 3 empty files and I did not find any null files.
+
+I used the format tab to reformat a few of my data types. 
+I changed DataTime to Date and Time and I added a new column to separate the two.After the initial cleaning was done I moved to analyze my data. 
+I used quite a few pivot tables to get this done. I initially started by creating a pivot table that would use the CountA function to find each unique id. 
+From here I learned that I had 32 unique ids. Expanding the CountA function I added days as another value and learned that there were  7 accounts that did not have more than 19 days of use listed. 
+
+I was curious to find how many of these 32 participated every single day and it was actually most of them. 
+I ran an =Average function over the number of days and found that the average days of interaction was 29.25 including the outliers below 19 days.
+
+Creating another pivot table with id as the rows and time as the columns I was able to find out that out of the 744 total possible hours in 31 days that 687 of them on average were recorded. 
+Only around 2 and one-third days were not recorded at all for each individual. 
+
+Another pivot table allowed me to find that the Highest frequency of interaction occurred on a Sunday with the most frequent time of active use being at 6 pm.
+
+Tracking the sleep data was easier because there was less data. Another pivot table was created with ids as the rows and columns as average time asleep and average time in bed. 
+
+Weight tracking was the easiest piece of data because of how small it was. A pivot table was practically unnecessary but nonetheless, I created one to track how many individuals interacted with the functions and how much improvement could be made.
