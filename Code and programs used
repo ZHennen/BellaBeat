@@ -2,7 +2,7 @@ To start this study I downloaded all 18 files and combined relevant files into o
 but ultimately found it easier to work in Google Sheets for this project.
 
 
-
+ 
 activity_data <- dplyr::rename(activity_data, Id = id, TotalSteps = average_daily_steps, TotalDistance = average_daily_distance,
 
  VeryActiveMinutes = average_very_active_minutes, FailyActiveMinutes = average_fairly_active_minutes,
